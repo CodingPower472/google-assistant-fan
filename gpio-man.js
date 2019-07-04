@@ -5,10 +5,10 @@ const FAN_POWER_PINS = {
     3: 6
 };
 
-const Gpio = require('onoff').Gpio;
+const rpiGpio = require('rpi-gpio');
 
 for (key in FAN_POWER_PINS) {
-    FAN_POWER_PINS[key] = new Gpio(FAN_POWER_PINS[key], 'out');
+    rpiGpio.setup(FAN_POWER_PINS[key]); // defaults to output
 }
 
 console.log(FAN_POWER_PINS);
@@ -16,11 +16,11 @@ console.log(FAN_POWER_PINS);
 module.exports = {
     setPower: function(newPower) {
         this.allOff();
-        FAN_POWER_PINS[newPower].writeSync(1);
+        rpiGpio.write(FAN_POWER_PINS[newPower], true);
     },
     allOff: function() {
         for (key in FAN_POWER_PINS) {
-            FAN_POWER_PINS[key].writeSync(0);
+            rpiGpio.write(FAN_POWER_PINS[key], false);
         }
     }
 }
