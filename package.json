@@ -1,0 +1,23 @@
+{
+  "name": "google-assistant-fan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "onoff": "^4.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingpower472/google-assistant-fan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codingpower472/google-assistant-fan/issues"
+  },
+  "homepage": "https://github.com/codingpower472/google-assistant-fan#readme"
+}
