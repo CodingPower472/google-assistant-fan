@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
+    "express": "^4.17.1",
     "rpi-gpio": "^2.1.3"
   },
   "buildDependenciesFromSource": true,
