@@ -39,6 +39,23 @@ app.post('/', (req, res) => {
         gpioMan.setPower(power);
         on = true;
     }
+    res.json(JSON.stringify({
+        payload: {
+            google: {
+                expectUserResponse: false,
+                richResponse: {
+                    items: [
+                        {
+                            simpleResponse: {
+                                textToSpeech: 'Ok, done!',
+                                displayText: 'Ok, done.'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
 });
 
 app.listen(80);
