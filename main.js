@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
         gpioMan.setPower(power);
         on = true;
     }
-    res.json(JSON.stringify({
+    let assistantResponse = {
         payload: {
             google: {
                 expectUserResponse: false,
@@ -55,7 +55,8 @@ app.post('/', (req, res) => {
                 }
             }
         }
-    }));
+    };
+    res.json(assistantResponse);
 });
 
 app.listen(80);
