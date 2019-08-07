@@ -40,6 +40,24 @@ app.post('/', (req, res) => {
         gpioMan.setPower(power);
         on = true;
     }
+    let assistantResponse = {
+        payload: {
+            google: {
+                expectUserResponse: false,
+                richResponse: {
+                    items: [
+                        {
+                            simpleResponse: {
+                                textToSpeech: 'Ok, done!',
+                                displayText: 'Ok, done.'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    };
+    res.json(assistantResponse);
 });
 
 app.listen(80);
