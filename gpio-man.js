@@ -18,7 +18,9 @@ module.exports = {
     setPower: function(newPower) {
         this.allOff();
         console.log(`Sending HIGH to ${FAN_POWER_PINS[newPower]}`);
-        rpiGpio.write(FAN_POWER_PINS[newPower], true);
+        if (FAN_POWER_PINS[newPower]) {
+            rpiGpio.write(FAN_POWER_PINS[newPower], true);
+        }
     },
     allOff: function() {
         for (key in FAN_POWER_PINS) {
