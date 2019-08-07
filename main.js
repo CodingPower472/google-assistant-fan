@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static('static'));
 
 let power = 2, on = false;
 
